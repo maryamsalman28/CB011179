@@ -270,6 +270,19 @@ display: block;
           font-size: 17px;
           line-height: 25px;
         }
+
+        .mainimage h2{
+    
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 80px;
+          color: rgb(94, 84, 84);
+          border: 3px solid #767676;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 12px;
+        }
       }
 
       /*footer*/

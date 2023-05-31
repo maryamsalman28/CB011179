@@ -130,7 +130,8 @@ display: block;
 
 .mainimage img{
     width:100%;
-    height:500px;
+    
+    height:auto;
     opacity: 0.9;
     object-fit: cover;
     
@@ -202,9 +203,10 @@ padding: 12px;
 
   @media screen and (max-width:1458px){
     .mainimage img{
-      width:1458px;
-      height:600px;
+      width:100%;
+      height:auto;
       opacity: 0.9;
+      object-fit: cover;
       
   }
   .mainimage h2{
@@ -216,15 +218,16 @@ padding: 12px;
 
   @media screen and (max-width:600px){
     .mainimage img{
-      width:1500px;
-      height:600px;
+      width:100%;
+      height:auto;
       opacity: 0.9;
+      object-fit:cover;
       
   }
   .mainimage h2{
     
     text-align: center;
-    margin-left: 700px;
+    margin-left: 30px;
   }
 
   .kosgoda-bentota{
@@ -240,29 +243,28 @@ padding: 12px;
   
   border-radius: 25px;
   padding: 10px;
-  margin-left: 50%;
-  margin-right: 50%;
+  margin-left: 30px;
   
   
-  width:800px;
-  height:500px;
+  
+  width:300px;
+  height:200px;
 
 } 
 
 .otherimage h3{
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
  
 }
 
 .otherimage p{
   text-align: center;
-  margin-left:50%;
-  margin-right: 50%;
+ 
   padding:10px;
-  font-size: 50px;
-  line-height: 50px;
- width:800px;
+  font-size: 20px;
+  line-height: 25px;
+ width:300px;
   
   align-items: center;
 }
@@ -419,3 +421,4 @@ h1{
       }
       }
   
+      
