@@ -1,0 +1,99 @@
+.detailss {
+    border: 3px solid #989797;
+    border-radius: 25px;
+    background-color: rgb(226, 239, 255);
+    padding: 10px;
+    margin:40px;
+    height: auto;
+    width: auto;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #bccbd1;
+}
+  
+  
+  .sum-section {
+    border: 3px solid #989797;
+    border-radius: 25px;
+    background-color: rgb(226, 239, 255);
+    padding: 10px;
+    margin:40px;
+    height: auto;
+    width: auto;
+  }
+
+  .summary-table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  .summary-table th,
+  .summary-table td {
+    padding: 10px;
+    border: 2px solid #042e35;
+    text-align: center;
+  }
+  
+  .summary-table th {
+    background-color: #5d6a7d;
+    color: white;
+  }
+  
+  .summary-table td {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .heading {
+    text-align: center;
+    padding: 10px; 
+    color: #000000;
+    background-color: #dfdede;
+
+    font-family: 'Lobster Two', cursive;
+    font-weight: 500;
+    font-size: 50px;
+  }
+
+body, nav, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  
+  /* Basic styles for the navigation bar */
+  nav {
+    background-color: #436de13a;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+  }
+  
+  .navigation li {
+    margin-right: 15px;
+    padding:5px 10px;
+    border: solid 1px black;
+  }
+  
+  .navigation li a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .navigation li a:hover {
+    color: rgb(69, 30, 208);
+    text-decoration: none;
+  }

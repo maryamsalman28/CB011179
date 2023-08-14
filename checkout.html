@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking X</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css">
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body>
+<div x-data="checkout">
+
+    <h1 class="heading">DETAILS</h1>
+
+    <nav>
+        <ul class="navigation">
+            <li><a href="./index.html">Home Page</a></li>
+            <li><a href="tickets.html">Tickets Page</a></li>
+        </ul>
+    </nav>
+
+    <div class="detailss">
+        <div>
+
+            <form x-on:submit.prevent="gotoPayment">
+                <div class="checkout">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" name="fullName" id="fullName" x-model="guest.fullName" required>
+                </div>
+                <div>
+                    <label for="mobile">Mobile</label>
+                    <input type="tel" name="mobile" id="mobile" x-model="guest.mobile">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" x-model="guest.email">
+                </div>
+                <div>
+                    <label for="gender">Gender</label>
+                    <select type="gender" name="gender" id="gender" x-model="guest.gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+            </form>
+
+            <div>
+                <button x-on:click="gotoPayment">Go to Payment</button>
+            </div>
+
+            <!-- <span x-text="JSON.stringify(guest)"></span> -->
+        </div>
+    </div>
+
+    <div class="sum-section">
+        <table class="summary-table">
+            <tr>
+                <td>Date</td>
+                <td x-text="date"></td>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td>
+                    <template x-for="timeIndex in selectedTimeSlots">
+                        <div x-text="openTimes[timeIndex].title"></div>
+                    </template>
+                </td>
+            </tr>
+            <tr>
+                <td>Duration</td>
+                <td x-text="selectedTimeSlots.length + ' Hrs'"></td>
+            </tr>
+            <tr>
+                <th>Tickets</th>
+                <th>Charges</th>
+            </tr>
+    
+            <template x-for="guestIndex in ticketTypes">
+                <tr x-show="guestIndex.count > 0">
+                    <td x-text="guestIndex.count + ' ' + guestIndex.name"></td>
+                    <td x-text="guestIndex.total"></td>
+                </tr>
+            </template>
+    
+            <tr>
+                <th>Total Payable</th>
+                <th x-text="'$' + calculateGrandTotal(ticketTypes)"></th>
+            </tr>
+        </table>
+    </div>    
+
+    
+
+    <script>
+        console.log("Page Loaded")
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('checkout', () => ({
+                guest: {
+                    fullName: '',
+                    mobile: '',
+                    email: '',
+                    gender: ''
+                },
+                date: '',
+                ticketTypes: [],
+                openTimes: [],
+                selectedTimeSlots: [],
+                savedGrandTotal: '',
+                init() {
+                    this.date = JSON.parse(localStorage.getItem('savedDate'));
+                    this.ticketTypes = JSON.parse(localStorage.getItem('ticketTypes'));
+                    this.openTimes = JSON.parse(localStorage.getItem('openTimes'));
+                    this.selectedTimeSlots = JSON.parse(localStorage.getItem('selectedTimeSlots'));
+                    this.savedGrandTotal = JSON.parse(localStorage.getItem('savedGrandTotal'));
+                    const input = document.querySelector("#mobile");
+                    window.intlTelInput(input, {
+                        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
+                    });
+                },
+                gotoPayment() {
+                    localStorage.setItem('guest', JSON.stringify(this.guest));
+                    window.location.href = 'payment.html';
+                },
+                // Other functions and properties go here
+            }));
+        });
+
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('tickets', () => ({
+                date: null,
+                ticketTypes: [
+                    // Your ticket types data here
+                ],
+                openTimes: [
+                    // Your open times data here
+                ],
+                selectedTimeSlots: [],
+                // Other functions and properties go here
+            }));
+        });
+
+       
+
+    </script>
+</div>    
+</body>
+
+</html>

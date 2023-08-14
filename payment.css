@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+#container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.expiry-cvc {
+    display: flex;
+    justify-content: space-between;
+}
+
+.expiry,
+.cvc {
+    width: 48%;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* nav */
+
+.heading {
+    text-align: center;
+    padding: 10px; 
+    color: #000000;
+    background-color: #b8b8b8;
+
+    font-family: 'Lobster Two', cursive;
+    font-weight: 500;
+    font-size: 50px;
+  }
+
+body, nav, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  
+  /* Basic styles for the navigation bar */
+  nav {
+    background-color: #f6f6f63a;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+  }
+  
+  .navigation li {
+    margin-right: 15px;
+    padding:5px 10px;
+    border: solid 1px black;
+  }
+  
+  .navigation li a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .navigation li a:hover {
+    color: rgb(30, 208, 175);
+    text-decoration: none;
+  }
+
+  .sum-section {
+    border: 3px solid #989797;
+    border-radius: 25px;
+    background-color: rgb(226, 239, 255);
+    padding: 10px;
+    margin:40px;
+    height: auto;
+    width: auto;
+  }
+
+  .summary-table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  .summary-table th,
+  .summary-table td {
+    padding: 10px;
+    border: 2px solid #042e35;
+    text-align: center;
+  }
+  
+  .summary-table th {
+    background-color: #5d6a7d;
+    color: white;
+  }
+  
+  .summary-table td {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .button1 {
+    align-items: center;
+    text-align: center;
+   
+  }
