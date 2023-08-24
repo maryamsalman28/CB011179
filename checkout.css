@@ -1,35 +1,193 @@
 .detailss {
-    border: 3px solid #989797;
-    border-radius: 25px;
-    background-color: rgb(226, 239, 255);
+
+  width: 900px;
+    margin: 20px ;
+    margin-top: 10px;
+    position: absolute;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+form input[type="text"],
+form input[type="tel"],
+form input[type="email"] {
+    width: 100%;
     padding: 10px;
-    margin:40px;
-    height: auto;
-    width: auto;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+form input[type="gender"] {
+    margin-right: 5px;
+}
+
+button {
+  padding: 5px 15px;
+  font-size: 16px;
+  background-color: #608dbc;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 30px;
+}
+
+.heading {
+  text-align: center;
+  padding: 10px; 
+  color: #000000;
+  background-color: #d0d4d6;
+  margin-top: 0;
+
+  font-family: 'Bricolage Grotesque', sans-serif;
+font-family: 'Kaushan Script', cursive;
+  font-weight: 500;
+  font-size: 50px;
+  
+}
+
+  /* navigation bar */
+
+* {
+  box-sizing: border-box;
+}
+
+nav .nav-content {
+  
+  background-color: rgb(14, 14, 14);
+  overflow: hidden;
+
+  
+}
+
+nav .nav-content header h2{
+  float: right;
+  color: rgb(170, 190, 208);
+  padding:1px;
+  
+  margin-right: 20px;
+  font-family: 'Kaushan Script', cursive;
+font-size: 23px;
+display: block;
+}
+
+  
+  
+
+  
+    nav .nav-content a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+  }
+  
+
+  
+  
+   nav .nav-content a:hover, .dropdown:hover .dropbtn {
+    background-color: #324250;
+  }
+
+  nav .nav-content .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  nav .nav-content .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+
+  nav .nav-content .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fafafae5;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  nav .nav-content .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 12px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  nav .nav-content .dropdown-content a:hover {
+    background-color: #9a9a9a;
+  }
+  
+  nav .nav-content .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  @media (max-width:600px) {
+    
+    .nav .nav-content header h2{
+      display: none;
+      
+    }
+
+    nav .nav-content a {
+      float: none;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    
+    }
+    
+
   }
 
   body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #bccbd1;
+    background-color: rgba(251, 245, 235, 0.966);
+    height: 800px;
+   
 }
   
+.checkoutpage{
+  display: flex;
+  flex-direction: row;
+}
   
   .sum-section {
     border: 3px solid #989797;
     border-radius: 25px;
     background-color: rgb(226, 239, 255);
     padding: 10px;
-    margin:40px;
+    margin:50px;
     height: auto;
-    width: auto;
+    width: 500px;
+    margin-right: 10px;
+    position: absolute;
+    right: 0;
+    margin-top: 7px;
+    
   }
 
   .summary-table {
     width: 100%;
     margin: 20px auto;
     border-collapse: collapse;
+    
   }
   
   .summary-table th,
@@ -49,16 +207,7 @@
     color: #000000;
   }
 
-  .heading {
-    text-align: center;
-    padding: 10px; 
-    color: #000000;
-    background-color: #dfdede;
-
-    font-family: 'Lobster Two', cursive;
-    font-weight: 500;
-    font-size: 50px;
-  }
+  
 
 body, nav, ul, li {
     margin: 0;
@@ -68,32 +217,90 @@ body, nav, ul, li {
     font-family: 'Rubik', sans-serif;
     font-weight: 700;
     font-size: 15px;
+    
   }
   
-  /* Basic styles for the navigation bar */
-  nav {
-    background-color: #436de13a;
+  footer {
+    text-align: center;
+    padding: 3px;
+    background-color: rgba(119, 117, 117, 0.599);
+    
+    
+    height:150px;
+    margin-bottom:0;
+    bottom: 0;
+  position: fixed;
+    margin-top: 10px;
+    width:100%;
+    
+  }
+  footer .nav-footer ul{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    height:auto;
   }
   
-  .navigation {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-
+  footer .nav-footer ul a{
+    font-weight: 500;
+    font-size: 20px;
+    color: #000000;
   }
   
-  .navigation li {
-    margin-right: 15px;
-    padding:5px 10px;
-    border: solid 1px black;
+  footer .nav-footer ul a:hover{
+    color: aliceblue;
   }
   
-  .navigation li a {
-    color: black;
-    text-decoration: none;
+  footer .contact p{
+    text-align: center;
+    color: #000000;
+    
   }
-
-  .navigation li a:hover {
-    color: rgb(69, 30, 208);
-    text-decoration: none;
+  
+  footer .copyright{
+    text-align: center;
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 100px;
+    color: #000000;
   }
+  
+  @media (max-width:1120px) {
+    footer{
+      height:170px
+    }
+    footer .nav-footer ul{
+      display:flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 90%;
+    
+    }
+    }
+  
+    @media (max-width:736px) {
+      footer{
+        height:300px
+      }
+      footer .nav-footer ul{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+      
+      }
+  
+      footer .nav-footer ul{
+        display:flex;
+        flex-wrap: wrap;
+        line-height: 40px;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }

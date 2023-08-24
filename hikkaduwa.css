@@ -396,3 +396,13 @@ body , html {
       }
       }
   
+      button {
+        padding: 10px 19px;
+        font-size: 16px;
+        background-color: #abcded;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 30px;
+      }

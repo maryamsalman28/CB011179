@@ -4,25 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking X</title>
+    <title>Details</title>
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css">
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
     <link rel="stylesheet" href="checkout.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,800&family=Kaushan+Script&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 <div x-data="checkout">
 
-    <h1 class="heading">DETAILS</h1>
+    <!-- shown below is the navigation bar -->
+   <nav>
+    
+    <div class="nav-content">
+      
+      <header><h2>Turtle Paradise</h2></header>
+      <a href="index.html">Home</a>
+      <a href="typeofturtle.html">Turtle Categories</a>
+      <a href="hikkaduwa.html">Hikkaduwa</a>
+      <a href="threats.html">Threats to turtles</a>
+      <div class="dropdown">
+        <button class="dropbtn">Other hatcheries
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="kosgoda.html">Kosgoda</a>
+          <a href="bentota.html">Bentota</a>
+        </div>
+      </div>
+      <a href="purchase.html">Purchase & Donate</a>
 
-    <nav>
-        <ul class="navigation">
-            <li><a href="./index.html">Home Page</a></li>
-            <li><a href="tickets.html">Tickets Page</a></li>
-        </ul>
-    </nav>
+    
 
+   
+  
+</div>
+</nav>
+
+<h1 class="heading">DETAILS</h1>
+
+
+ <div class="checkoutpage">
     <div class="detailss">
         <div>
 
@@ -30,15 +58,15 @@
                 <div class="checkout">
                     <label for="fullName">Full Name</label>
                     <input type="text" name="fullName" id="fullName" x-model="guest.fullName" required>
-                </div>
+                </div><br>
                 <div>
                     <label for="mobile">Mobile</label>
-                    <input type="tel" name="mobile" id="mobile" x-model="guest.mobile">
-                </div>
+                    <input type="tel" name="mobile" id="mobile" x-model="guest.mobile" required>
+                </div><br>
                 <div>
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" x-model="guest.email">
-                </div>
+                    <input type="email" name="email" id="email" x-model="guest.email" required>
+                </div><br>
                 <div>
                     <label for="gender">Gender</label>
                     <select type="gender" name="gender" id="gender" x-model="guest.gender">
@@ -91,7 +119,9 @@
                 <th x-text="'$' + calculateGrandTotal(ticketTypes)"></th>
             </tr>
         </table>
-    </div>    
+    </div>  
+ </div>
+      
 
     
 
@@ -146,7 +176,31 @@
        
 
     </script>
-</div>    
+    
+
+ <footer>
+    <div class="nav-footer">
+      <ul>
+      
+      <a href="index.html">Home</a>
+      <a href="typeofturtle.html">Turtle Categories</a>
+      <a href="hikkaduwa.html">Hikkaduwa</a>
+      <a href="threats.html">Threats to turtles</a>
+      <a href="kosgoda.html">Kosgoda</a>
+      <a href="bentota.html">Bentota</a>
+      <a href="purchase.html">Purchase & Donate</a>
+     </ul>
+</div>
+<div class="contact">
+<br><p>Connect with us<br>Contact number: +94 77 123 4567<br>Email: turtleparadise@gmail.com
+</p></div>
+<div class="copyright">
+  <br>Copyrights @CB011179 2023.allrights reserved
+</div>
+
+  </footer>
+
+
 </body>
 
 </html>

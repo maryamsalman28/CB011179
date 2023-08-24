@@ -4,23 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking X</title>
+    <title>Buy Tickets</title>
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="tickets.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,800&family=Kaushan+Script&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <h1 class="heading">BUY TICKETS</h1>
-  <input type="checkbox" id="menu-toggle">
-  <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+  <!-- shown below is the navigation bar -->
   <nav>
-    <ul class="navigation">
-      <li><a href="./index.html">Home Page</a></li>
-      <li><a href="tickets.html">Tickets Page</a></li>
-    </ul>
-  </nav> 
     
+    <div class="nav-content">
+      
+      <header><h2>Turtle Paradise</h2></header>
+      <a href="index.html">Home</a>
+      <a href="typeofturtle.html">Turtle Categories</a>
+      <a href="hikkaduwa.html">Hikkaduwa</a>
+      <a href="threats.html">Threats to turtles</a>
+      <div class="dropdown">
+        <button class="dropbtn">Other hatcheries
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="kosgoda.html">Kosgoda</a>
+          <a href="bentota.html">Bentota</a>
+        </div>
+      </div>
+      <a href="purchase.html">Purchase & Donate</a>
+
+    
+
+   
+  
+</div>
+</nav>
+    
+<h1 class="heading">BUY TICKETS</h1>
 
     <!-- <pre>
     - Tickets
@@ -50,7 +74,9 @@
     -- Infant
     </pre> -->
 
-    <div x-data="tickets"">
+    
+  <div class="ticketspage">
+     <div x-data="tickets"">
         <div class="dateandtime">
             <div>
                 <label for="date">Date</label>
@@ -94,7 +120,7 @@
             </div>
         </div>
         
-            
+           
             <!-- Summary Table -->
     <div class="sum-section">
         <table class="summary-table">
@@ -128,10 +154,18 @@
           <tr> <th>Total Payable</th> <th x-text="'$' +calculateGrandTotal(ticketTypes) "></th> </tr>
         </table>
       </div>
-      <div class="button1">
-            
-        <button type="button" x-on:click="gotoCheckout">Go to Checkout</button>
-    </div>
+      
+  
+
+  
+
+      
+            <div class="checkoutbutton"> 
+                <button x-on:click="gotoCheckout">Continue with purchase</button>
+            </div>
+
+        </div> 
+           
 <br>
 
 
@@ -294,7 +328,7 @@
           localStorage.setItem('selectedTimeSlots', JSON.stringify(this.selectedTimeSlots));
 
           // redirect to the checkout page
-          window.location.href = 'checkout.html';
+          window.location.href='checkout.html';
       }
 
   }));

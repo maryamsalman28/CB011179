@@ -4,83 +4,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking X</title>
+    <title>Payment</title>
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="payment.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,800&family=Kaushan+Script&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-<div x-data="tickets">    
 
-    <h1 class="heading">PAYMENT</h1>
+     <!-- shown below is the navigation bar -->
+  <nav>
+    
+    <div class="nav-content">
+      
+      <header><h2>Turtle Paradise</h2></header>
+      <a href="index.html">Home</a>
+      <a href="typeofturtle.html">Turtle Categories</a>
+      <a href="hikkaduwa.html">Hikkaduwa</a>
+      <a href="threats.html">Threats to turtles</a>
+      <div class="dropdown">
+        <button class="dropbtn">Other hatcheries
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="kosgoda.html">Kosgoda</a>
+          <a href="bentota.html">Bentota</a>
+        </div>
+      </div>
+      <a href="purchase.html">Purchase & Donate</a>
 
-    <nav>
-        <ul class="navigation">
-            <li><a href="./index.html">Home Page</a></li>
-            <li><a href="tickets.html">Tickets Page</a></li>
-        </ul>
-    </nav>
+    
 
-    <div id="container">
-        <h1>Payment Details</h1>
-        <form>
-            <label for="cardNumber">Card Number</label>
-            <input x-model="cardNumber" type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number" required>
-
-            <div class="expiry-cvc">
-                <div class="expiry">
-                    <label for="expiry">Expiry Date</label>
-                    <input x-model="expiryDate" type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
-                </div>
-                <div class="cvc">
-                    <label for="cvc">CVC / CVV</label>
-                    <input x-model="cvc" type="number" id="cvc" name="cvc" placeholder="CVC / CVV" required>
-                </div>
-            </div>
-
-            <label for="nameOnCard">Name on Card</label>
-            <input x-model="nameOnCard" type="text" id="nameOnCard" name="nameOnCard" placeholder="Enter name on card" required>
-        </form>
-        <button x-on:click="gotoConfirmation">Make Payment</button>
-    </div>
-
-    <!--Summary table-->
-    <div class="sum-section">
-        <table class="summary-table">
-            <tr>
-                <td>Date</td>
-                <td x-text="date"></td>
-            </tr>
-            <tr>
-                <td>Time</td>
-                <td>
-                    <template x-for="timeIndex in selectedTimeSlots">
-                        <div x-text="openTimes[timeIndex].title"></div>
-                    </template>
-                </td>
-            </tr>
-            <tr>
-                <td>Duration</td>
-                <td x-text="selectedTimeSlots.length +' Hrs'"></td>
-            <tr>
-                <th>Tickets</th>
-                <th>Charges</th>
-            </tr>
-
-            <template x-for="guestIndex in ticketTypes">
-                <tr x-show="guestIndex.count > 0">
-                    <td x-text="guestIndex.count + ' ' + guestIndex.name"></td>
-                    <td x-text="guestIndex.total"></td>
-                </tr>
-            </template>
-
-            <tr>
-                <th>Total Payable</th>
-                <th x-text="'$' +calculateGrandTotal(ticketTypes) "></th>
-            </tr>
-        </table>
-    </div>
+   
+  
 </div>
+</nav>
+
+<h1 class="heading">PAYMENT</h1>
+
+<div class="paypage">
+    <div x-data="tickets">    
+
+
+        <div id="container">
+            <h1>Payment Details</h1>
+            <form>
+                <label for="cardNumber">Card Number</label>
+                <input x-model="cardNumber" type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number" required>
+    
+                <div class="expiry-cvc">
+                    <div class="expiry">
+                        <label for="expiry">Expiry Date</label>
+                        <input x-model="expiryDate" type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+                    </div>
+                    <div class="cvc">
+                        <label for="cvc">CVC / CVV</label>
+                        <input x-model="cvc" type="number" id="cvc" name="cvc" placeholder="CVC / CVV" required>
+                    </div>
+                </div>
+    
+                <label for="nameOnCard">Name on Card</label>
+                <input x-model="nameOnCard" type="text" id="nameOnCard" name="nameOnCard" placeholder="Enter name on card" required>
+            </form>
+            <button x-on:click="gotoConfirmation">Make Payment</button>
+        </div>
+    
+        <!--Summary table-->
+        <div class="sum-section">
+            <table class="summary-table">
+                <tr>
+                    <td>Date</td>
+                    <td x-text="date"></td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td>
+                        <template x-for="timeIndex in selectedTimeSlots">
+                            <div x-text="openTimes[timeIndex].title"></div>
+                        </template>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Duration</td>
+                    <td x-text="selectedTimeSlots.length +' Hrs'"></td>
+                <tr>
+                    <th>Tickets</th>
+                    <th>Charges</th>
+                </tr>
+    
+                <template x-for="guestIndex in ticketTypes">
+                    <tr x-show="guestIndex.count > 0">
+                        <td x-text="guestIndex.count + ' ' + guestIndex.name"></td>
+                        <td x-text="guestIndex.total"></td>
+                    </tr>
+                </template>
+    
+                <tr>
+                    <th>Total Payable</th>
+                    <th x-text="'$' +calculateGrandTotal(ticketTypes) "></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+  </div>
 
     <script>
 
@@ -260,6 +291,32 @@
             }));
         })
     </script>
+
+<footer>
+    <div class="nav-footer">
+      <ul>
+      
+      <a href="index.html">Home</a>
+      <a href="typeofturtle.html">Turtle Categories</a>
+      <a href="hikkaduwa.html">Hikkaduwa</a>
+      <a href="threats.html">Threats to turtles</a>
+      <a href="kosgoda.html">Kosgoda</a>
+      <a href="bentota.html">Bentota</a>
+      <a href="purchase.html">Purchase & Donate</a>
+</ul>
+</div>
+<div class="contact">
+<br><p>Connect with us<br>Contact number: +94 77 123 4567<br>Email: turtleparadise@gmail.com
+</p></div>
+<div class="copyright">
+  <br>Copyrights @CB011179 2023.allrights reserved
+</div>
+
+<!--reference-->
+<!--
+  Sea turtle hatchery and rescue centre: Attractions in Hikkaduwa (2023) Love Sri Lanka . Available at: https://www.lovesrilanka.org/sea-turtle-hatchery-and-rescue-centre/ (Accessed: 30 May 2023). 
+-->
+  </footer>
 
 
 
